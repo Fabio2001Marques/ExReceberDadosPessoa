@@ -22,11 +22,12 @@ class MainActivity : AppCompatActivity() {
 
 
     fun enviaMensagem(view: View) {
-        val editTextNome = findViewById<EditText>(R.id.editTextNome)
+        val editTextNome = findViewById<EditText>(R.id.textInputEditNome)
         val nome = editTextNome.text.toString()
 
-        val editTextEmail = findViewById<EditText>(R.id.editTextEmail)
+        val editTextEmail = findViewById<EditText>(R.id.textInputEditEmail)
         val email = editTextEmail.text.toString()
+        
 
 
         val intent = Intent(this, MostraDadosPessoa::class.java).apply {
