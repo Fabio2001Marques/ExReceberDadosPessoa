@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ExReceberDadosPessoa</string>
+    <string name="phone">Phone</string>
+    <string name="enviar">Enviar</string>
+</resources>
