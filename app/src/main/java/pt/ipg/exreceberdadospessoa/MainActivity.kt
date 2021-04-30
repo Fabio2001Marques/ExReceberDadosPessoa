@@ -27,12 +27,19 @@ class MainActivity : AppCompatActivity() {
 
         val editTextEmail = findViewById<EditText>(R.id.textInputEditEmail)
         val email = editTextEmail.text.toString()
-        
+
+        val editTextPhone = findViewById<EditText>(R.id.textInputEditPhone)
+        val phone = editTextPhone.text.toString()
+
+        val editTextIdade = findViewById<EditText>(R.id.textInputEditIdade)
+        val idade = editTextIdade.text.toString()
 
 
         val intent = Intent(this, MostraDadosPessoa::class.java).apply {
             putExtra(NOME, nome)
             putExtra(EMAIL, email)
+            putExtra(PHONE, phone)
+            putExtra(Idade, idade)
         }
 
         startActivity(intent)
