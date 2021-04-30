@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    fun enviaMensagem(view: View) {
+    fun enviaDados(view: View) {
         val editTextNome = findViewById<EditText>(R.id.textInputEditNome)
         val nome = editTextNome.text.toString()
 
