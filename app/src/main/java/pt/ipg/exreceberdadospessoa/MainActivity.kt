@@ -25,15 +25,34 @@ class MainActivity : AppCompatActivity() {
         val editTextNome = findViewById<EditText>(R.id.textInputEditNome)
         val nome = editTextNome.text.toString()
 
+        if(nome.isBlank()){
+            editTextNome.error = "Please Specify a name"
+            return
+        }
+
         val editTextEmail = findViewById<EditText>(R.id.textInputEditEmail)
         val email = editTextEmail.text.toString()
+
+        if(nome.isBlank()){
+            editTextNome.error = "Please Specify a email"
+            return
+        }
 
         val editTextPhone = findViewById<EditText>(R.id.textInputEditPhone)
         val phone = editTextPhone.text.toString()
 
+        if(phone.isBlank()){
+            editTextPhone.error = "Please Specify a phone"
+            return
+        }
+
         val editTextIdade = findViewById<EditText>(R.id.textInputEditIdade)
         val idade = editTextIdade.text.toString()
 
+        if(idade.isBlank()){
+            editTextIdade.error = "Please Specify a idade"
+            return
+        }
 
         val intent = Intent(this, MostraDadosPessoa::class.java).apply {
             putExtra(NOME, nome)
