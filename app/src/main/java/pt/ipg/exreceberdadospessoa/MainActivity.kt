@@ -18,10 +18,14 @@ class MainActivity : AppCompatActivity() {
         val EMAIL = "Email"
         val PHONE = "Phone"
         val Idade = "Idade"
+        val DATA = "Data"
     }
 
 
     fun enviaDados(view: View) {
+
+        val data = Date()
+
         val editTextNome = findViewById<EditText>(R.id.textInputEditNome)
         val nome = editTextNome.text.toString()
 
@@ -59,6 +63,8 @@ class MainActivity : AppCompatActivity() {
             putExtra(EMAIL, email)
             putExtra(PHONE, phone)
             putExtra(Idade, idade)
+            putExtra(DATA, data)
+
         }
 
         startActivity(intent)
