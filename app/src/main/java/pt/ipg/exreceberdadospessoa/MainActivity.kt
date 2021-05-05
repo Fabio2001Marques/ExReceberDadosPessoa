@@ -29,44 +29,49 @@ class MainActivity : AppCompatActivity() {
         val editTextNome = findViewById<EditText>(R.id.textInputEditNome)
         val nome = editTextNome.text.toString()
 
-        if(nome.isBlank()){
+        var dadosCorretos = true
+
+        if (nome.isBlank()) {
             editTextNome.error = "Please Specify a name"
-            return
+            dadosCorretos = false
         }
 
         val editTextEmail = findViewById<EditText>(R.id.textInputEditEmail)
         val email = editTextEmail.text.toString()
 
-        if(nome.isBlank()){
-            editTextNome.error = "Please Specify a email"
-            return
+        if (email.isBlank()) {
+            editTextEmail.error = "Please Specify a email"
+            dadosCorretos = false
         }
 
         val editTextPhone = findViewById<EditText>(R.id.textInputEditPhone)
         val phone = editTextPhone.text.toString()
 
-        if(phone.isBlank()){
+        if (phone.isBlank()) {
             editTextPhone.error = "Please Specify a phone"
-            return
+            dadosCorretos = false
         }
 
+        // Normalmente deve ser pedida a data de nascimento e não a idade
         val editTextIdade = findViewById<EditText>(R.id.textInputEditIdade)
-        val idade = editTextIdade.text.toString()
+        val idade = editTextIdade.text.toString().toIntOrNull()
 
-        if(idade.isBlank()){
-            editTextIdade.error = "Please Specify a idade"
-            return
+        if (idade == null) {
+            editTextIdade.error = "Please Specify age"
+            dadosCorretos = false
         }
 
-        val intent = Intent(this, MostraDadosPessoa::class.java).apply {
-            putExtra(NOME, nome)
-            putExtra(EMAIL, email)
-            putExtra(PHONE, phone)
-            putExtra(Idade, idade)
-            putExtra(DATA, data)
+        if (dadosCorretos) {
 
+            val intent = Intent(this, MostraDadosPessoa::class.java).apply {
+                putExtra(NOME, nome)
+                putExtra(EMAIL, email)
+                putExtra(PHONE, phone)
+                putExtra(Idade, idade)
+                putExtra(DATA, data)
+
+            }
+            startActivity(intent)
         }
-
-        startActivity(intent)
     }
 }
